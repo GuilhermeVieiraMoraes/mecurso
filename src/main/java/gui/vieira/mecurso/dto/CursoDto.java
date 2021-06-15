@@ -83,7 +83,7 @@ public class CursoDto {
         this.valor = valor;
     }
     
-    public static List<CursoDto> converter(Page<Curso> cursos){
+    public static List<CursoDto> converter(List<Curso> cursos){
         return cursos.stream().map(CursoDto::new).collect(Collectors.toList());
     }
     
