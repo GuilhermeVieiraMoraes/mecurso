@@ -2,6 +2,7 @@
 package gui.vieira.mecurso.entity;
 
 import java.util.Date;
+import java.util.Objects;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -84,6 +85,56 @@ public class Curso {
     public void setValor(float valor) {
         this.valor = valor;
     }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + Float.floatToIntBits(this.id);
+        hash = 53 * hash + Objects.hashCode(this.nome);
+        hash = 53 * hash + Objects.hashCode(this.descricao);
+        hash = 53 * hash + Objects.hashCode(this.ementa);
+        hash = 53 * hash + Objects.hashCode(this.dataCadastro);
+        hash = 53 * hash + Objects.hashCode(this.dataInicio);
+        hash = 53 * hash + Float.floatToIntBits(this.valor);
+        return hash;
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Curso other = (Curso) obj;
+        if (Float.floatToIntBits(this.id) != Float.floatToIntBits(other.id)) {
+            return false;
+        }
+        if (Float.floatToIntBits(this.valor) != Float.floatToIntBits(other.valor)) {
+            return false;
+        }
+        if (!Objects.equals(this.nome, other.nome)) {
+            return false;
+        }
+        if (!Objects.equals(this.descricao, other.descricao)) {
+            return false;
+        }
+        if (!Objects.equals(this.ementa, other.ementa)) {
+            return false;
+        }
+        if (!Objects.equals(this.dataCadastro, other.dataCadastro)) {
+            return false;
+        }
+        if (!Objects.equals(this.dataInicio, other.dataInicio)) {
+            return false;
+        }
+        return true;
+    }
+    
 
     @Override
     public String toString() {
