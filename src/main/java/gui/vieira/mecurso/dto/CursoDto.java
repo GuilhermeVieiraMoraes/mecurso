@@ -3,7 +3,9 @@ package gui.vieira.mecurso.dto;
 
 import gui.vieira.mecurso.entity.Curso;
 import java.util.Date;
+import java.util.stream.Collectors;
 import org.springframework.data.domain.Page;
+import java.util.List;
 
 public class CursoDto {
     private int id;
@@ -81,8 +83,8 @@ public class CursoDto {
         this.valor = valor;
     }
     
-    public static Page<CursoDto> converter(Page<Curso> cursos){
-        return cursos.map(CursoDto::new);
+    public static List<CursoDto> converter(Page<Curso> cursos){
+        return cursos.stream().map(CursoDto::new).collect(Collectors.toList());
     }
     
     
