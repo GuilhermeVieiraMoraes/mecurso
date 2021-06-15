@@ -89,13 +89,13 @@ public class Curso {
     @Override
     public int hashCode() {
         int hash = 7;
-        hash = 53 * hash + Float.floatToIntBits(this.id);
-        hash = 53 * hash + Objects.hashCode(this.nome);
-        hash = 53 * hash + Objects.hashCode(this.descricao);
-        hash = 53 * hash + Objects.hashCode(this.ementa);
-        hash = 53 * hash + Objects.hashCode(this.dataCadastro);
-        hash = 53 * hash + Objects.hashCode(this.dataInicio);
-        hash = 53 * hash + Float.floatToIntBits(this.valor);
+        hash = 97 * hash + Float.floatToIntBits(this.id);
+        hash = 97 * hash + Objects.hashCode(this.nome);
+        hash = 97 * hash + Objects.hashCode(this.descricao);
+        hash = 97 * hash + Objects.hashCode(this.ementa);
+        hash = 97 * hash + Objects.hashCode(this.dataCadastro);
+        hash = 97 * hash + Objects.hashCode(this.dataInicio);
+        hash = 97 * hash + Float.floatToIntBits(this.valor);
         return hash;
     }
 
@@ -134,13 +134,13 @@ public class Curso {
         }
         return true;
     }
-    
 
     @Override
     public String toString() {
         return "Curso{" + "id=" + id + ", nome=" + nome + ", descricao=" + descricao + ", ementa=" + ementa + ", dataCadastro=" + dataCadastro + ", dataInicio=" + dataInicio + ", valor=" + valor + '}';
     }
-    
+
+   
     
     
     
